@@ -1,0 +1,36 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../views/*.blade.php';
+@source '../js/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@layer components {
+    .grid-responsive {
+        @apply grid grid-cols-2 gap-6 p-6;
+    }
+
+    @media (max-width: 768px) {
+        .grid-responsive {
+            @apply grid-cols-1 gap-4 p-4;
+        }
+    }
+
+    .card-section {
+        @apply bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 cursor-pointer;
+    }
+
+    .card-image {
+        @apply bg-gray-100 rounded-lg overflow-hidden h-48 flex items-center justify-center;
+    }
+
+    .card-title {
+        @apply text-2xl font-bold mb-4 text-gray-800;
+    }
+}
+
